@@ -1,7 +1,7 @@
 import React from 'react';
 import Book from "./Book.js";
 
-var Shelf = (props) => {
+const Shelf = (props) => {
 	// TBH I probably dont need this component
 	return (
 		<div>

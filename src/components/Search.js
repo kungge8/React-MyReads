@@ -11,19 +11,27 @@ class Search extends Component {
 
 	searchBooks = (e) =>{
 		//search for book on input field change and trigger rerender to display results
-		BooksAPI.search(e.target.value, 20).then(
-			(res) => {
-				if(!res.error){
-					this.setState({
-						results: res
-					});
-				} else {
-					this.setState({
-						results: []
-					})
+		if(e.target.value){
+			BooksAPI.search(e.target.value, 20).then(
+				(res) => {
+					console.log("searchBooks: ", res);
+					if(!res.error){
+						this.setState({
+							results: res
+						});
+					} else {
+						this.setState({
+							results: []
+						})
+					}
 				}
-			}
-		);
+			);
+		} else {
+			this.setState({
+				results: []
+			})
+		}
+		
 	}
 
 	render (){
