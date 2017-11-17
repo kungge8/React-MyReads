@@ -14,6 +14,7 @@ import {Route, Link} from 'react-router-dom';
     }
 
   updateShelf = (shelf) => {
+    //updates shelf in state
     this.setState({
         shelf: shelf,
         currentlyReading: shelf.filter((book) => book.shelf === "currentlyReading"),
@@ -23,6 +24,7 @@ import {Route, Link} from 'react-router-dom';
   }
 
   getShelf = () => {
+    //query db for user's shelf
     BooksAPI.getAll().then((res) => {
       this.updateShelf(res);
       // console.log("getShelf returned: ", this.state.shelf);
@@ -30,6 +32,7 @@ import {Route, Link} from 'react-router-dom';
   }
 
   changeShelf = () => {
+    //event handler to change the shelf of a book. Partial application to save the app to reference state, then again in the book element this gets passed down to to save the books props.
     const parent = this;
     return (props) => {
       return (e) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import Book from "./Book.js";
 
 var Shelf = (props) => {
-	// console.log("shelfrender");
+	// TBH I probably dont need this component
 	return (
 		<div>
 			<div className="bookshelf">

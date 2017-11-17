@@ -10,6 +10,7 @@ class Search extends Component {
 	}
 
 	searchBooks = (e) =>{
+		//search for book on input field change and trigger rerender to display results
 		BooksAPI.search(e.target.value, 20).then(
 			(res) => {
 				if(!res.error){
