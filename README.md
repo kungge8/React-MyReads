@@ -1,10 +1,10 @@
 Udacity MyReads Project assigment
 
-#Overview
+## Overview
 
 MyReads is an aide that helps you track what you have an have yet to read. It offers the basic functionality of tracking books you are in the process of reading, books you have finished reading, and books you want to read, as well as a search to quickly and easily add more books to your bookshelf.
 
-#Install and run
+## Install and run
 
 You will at least need node installed to run this program.
 
