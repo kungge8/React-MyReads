@@ -8,19 +8,13 @@ import {Route, Link, Switch} from 'react-router-dom';
 
   class BooksApp extends React.Component {
     state = {
-      shelf: [],
-      // currentlyReading:[],
-      // wantToRead: [],
-      // read: []
+      shelf: []
     }
 
   updateShelf = (shelf) => {
     //updates shelf in state
     this.setState({
-        shelf: shelf,
-        // currentlyReading: shelf.filter((book) => book.shelf === "currentlyReading"),
-        // wantToRead: shelf.filter((book) => book.shelf === "wantToRead"),
-        // read: shelf.filter((book) => book.shelf === "read")
+        shelf: shelf
     });
   }
 
@@ -28,7 +22,6 @@ import {Route, Link, Switch} from 'react-router-dom';
     //query db for user's shelf
     BooksAPI.getAll().then((res) => {
       this.updateShelf(res);
-      // console.log("getShelf returned: ", this.state.shelf);
     });
   }
 
@@ -41,13 +34,6 @@ import {Route, Link, Switch} from 'react-router-dom';
         BooksAPI.update(props, et).then((res) => {
           parent.getShelf();
         });
-
-        // const et = e.target.value;
-        // BooksAPI.update(props, et).then((res) => {
-        //   parent.setState(previousState => ({
-        //     shelf: previousState.shelf.filter(b=> b.id !== props.id).concat([props])
-        //   }))
-        // });
       };
     };
   }
@@ -57,7 +43,6 @@ import {Route, Link, Switch} from 'react-router-dom';
   }
 
   render() {
-    // console.log("apprender");
     return (
       <div className="app">
         <Switch>

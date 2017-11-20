@@ -8,7 +8,7 @@ const Book = (props) => {
 				<div className="book-top">
         	<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${props.book.imageLinks ? props.book.imageLinks.thumbnail : "http://via.placeholder.com/128x193?text=No%20Cover"})` }}></div>
         	<div className="book-shelf-changer">
-          	<select onChange={props.cShelf(props.book)} value={props.book.shelf}>
+          	<select onChange={props.changeShelf(props.book)} value={props.book.shelf}>
             	<option value="none" disabled>Move to...</option>
             	<option value="currentlyReading">Currently Reading</option>
             	<option value="wantToRead">Want to Read</option>

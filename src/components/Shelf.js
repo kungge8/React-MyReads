@@ -15,7 +15,7 @@ const Shelf = (props) => {
           				<Book
           					book={n}
           					key={n.id}
-          					cShelf={props.cShelf}
+          					changeShelf={props.changeShelf}
           			/>);
           		})}
           </ol>
