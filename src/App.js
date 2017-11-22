@@ -58,19 +58,19 @@ import {Route, Link, Switch} from 'react-router-dom';
                     className="bookshelf" 
                     books={this.state.shelf.filter((book) => book.shelf === "currentlyReading")}
                     title="Currently Reading"
-                    cShelf={this.changeShelf()}
+                    changeShelf={this.changeShelf()}
                   />
                   <Shelf 
                     className="bookshelf"
                     books={this.state.shelf.filter((book) => book.shelf === "wantToRead")}
                     title="Want To Read"
-                    cShelf={this.changeShelf()}
+                    changeShelf={this.changeShelf()}
                   />
                   <Shelf 
                     className="bookshelf" 
                     books={this.state.shelf.filter((book) => book.shelf === "read")}
                     title="Read"
-                    cShelf={this.changeShelf()}
+                    changeShelf={this.changeShelf()}
                   />
                 </div>
                 <div className="open-search">
