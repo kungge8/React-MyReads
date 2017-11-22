@@ -14,7 +14,6 @@ class Search extends Component {
 		if(e.target.value){
 			BooksAPI.search(e.target.value, 20).then(
 				(res) => {
-					console.log("searchBooks: ", res);
 					if(!res.error){
 						this.setState({
 							results: res
