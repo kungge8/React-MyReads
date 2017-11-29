@@ -49,7 +49,13 @@ class Search extends Component {
 	      </div>
 	      <div className="search-books-results">
 	        <ol className="books-grid">
-	        	{this.state.results.filter((n) => this.props.currShelf.indexOf(n.id) < 0).map(
+	        	{this.state.results.map((n) => {
+	        		let onShelf = this.props.currShelf.find((m) => m.id === n.id );
+	        		if (onShelf){
+	        			n.shelf = onShelf.shelf
+	        		}
+	        		return n;
+	        	}).map(
           		(n) => {
           			return (
           				<Book
@@ -61,6 +67,7 @@ class Search extends Component {
 	        </ol>
 	      </div>
 	    </div>
+
 		);
 	}
 }

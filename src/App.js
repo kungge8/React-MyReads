@@ -89,7 +89,7 @@ import {Route, Link, Switch} from 'react-router-dom';
             // console.log("search rendered");
             return (
               <Search
-                currShelf={this.state.shelf.map((n) => n.id)}
+                currShelf={this.state.shelf}
                 addBook={this.changeShelf()}
               />
             );
